@@ -13,7 +13,7 @@ resource "google_compute_instance" "tf-instance-1" {
       EOT
   allow_stopping_for_update = true
   network_interface {
- network = "tf-vpc-707736"
+ network = var.vpc_name
   subnetwork = "subnet-01"
   }
 }
@@ -34,7 +34,7 @@ boot_disk {
   }
 
   network_interface {
-network = "tf-vpc-707736" 
+network = var.vpc_name
 subnetwork = "subnet-02"
   }
 }
